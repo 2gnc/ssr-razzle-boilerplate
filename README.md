@@ -1,3 +1,11 @@
+# TMGTrader
+ Online toolset for Magic The Gathering cards collection management.
+
+ ## Contributing
+
+ [Trello board](https://trello.com/b/VMtE9KHN/mtgtrader)
+
+
 **WARNING: This is the documentation for `razzle@next` (Webpack 4).**  
 [Go here for for razzle@0.8.x (stable) docs (Webpack 3)](https://github.com/jaredpalmer/razzle/tree/master).
 
