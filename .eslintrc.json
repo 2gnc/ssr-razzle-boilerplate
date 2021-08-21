@@ -12,13 +12,13 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-console": "error",
+        "no-console": ["error", { "allow": ["warn", "error", "info"] }],
         "strict": ["error", "global"],
         "curly": "warn",
         "indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
         "import/extensions": [
-            "error",
+            0,
             "ignorePackages",
             {
                 "js": "never",
@@ -26,6 +26,15 @@
                 "ts": "never",
                 "tsx": "never"
             }
-        ]
+        ],
+        "no-trailing-spaces": [2, { "skipBlankLines": true }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
     }
 }
