@@ -1,6 +1,5 @@
 # TMGTrader
  Online toolset for Magic The Gathering cards collection management.
- /////
 
  ## Contributing
 
