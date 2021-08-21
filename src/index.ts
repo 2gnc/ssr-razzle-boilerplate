@@ -6,6 +6,7 @@ if (module.hot) {
     module.hot.accept('./server', () => {
         console.info('🔁  HMR Reloading `./server`...');
         try {
+            // eslint-disable-next-line  global-require
             app = require('./server').default;
         } catch (error) {
             console.error(error);
