@@ -5,6 +5,13 @@
 
  [Trello board](https://trello.com/b/VMtE9KHN/mtgtrader)
 
+### `npm start` or `yarn start`
+
+Runs the project in development mode.  
+You can view your application at `http://localhost:3000`
+
+The page will reload if you make edits.
+
 
 **WARNING: This is the documentation for `razzle@next` (Webpack 4).**  
 [Go here for for razzle@0.8.x (stable) docs (Webpack 3)](https://github.com/jaredpalmer/razzle/tree/master).
@@ -44,12 +51,7 @@ Then open http://localhost:3000/ to see your app. Your console should look like 
 
 Below is a list of commands you will probably find useful.
 
-### `npm start` or `yarn start`
 
-Runs the project in development mode.  
-You can view your application at `http://localhost:3000`
-
-The page will reload if you make edits.
 
 ### `npm run build` or `yarn build`
 
