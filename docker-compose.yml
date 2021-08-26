@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+    mtgtraderdb:
+        image: postgres:13
+        environment:
+            POSTGRES_PASSWORD: 'postgress'
+            POSTGRES_USER: 'postgress'
+            POSTGRES_DB: 'mtgtrader_db'
+        volumes:
+            - ${PWD}/pgdata:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+    mtgtraderweb:
+        image: mtgtrader
+        environment:
+            NODE_ENV: ${NODE_ENV}
+        ports:
+            - '5000:3000'
+            - '3001:3001'
+        depends_on:
+            - mtgtraderdb
+        volumes:
+            - ${PWD}:/app
