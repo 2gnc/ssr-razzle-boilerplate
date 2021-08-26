@@ -17,9 +17,10 @@ const jsScriptTagsFromAssets = (assets, entrypoint, extra = '') => assets[entryp
     ).join('') : '' : '';
 
 const server = express();
+
 server
     .disable('x-powered-by')
-    .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+    .use(express.static(process.env.RAZZLE_PUBLIC_DIR || '/public'))
     .get('/*', (req, res) => {
 
         const context = {} as StaticRouterProps['context'];
@@ -33,20 +34,20 @@ server
             res.redirect(context.url);
         } else {
             res.status(200).send(
-                `<!doctype html>
-    <html lang="">
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta charset="utf-8" />
-        <title>Welcome to Razzle</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        ${cssLinksFromAssets(assets, 'client')}
-    </head>
-    <body>
-        <div id="root">${markup}</div>
-        ${jsScriptTagsFromAssets(assets, 'client', ' defer crossorigin')}
-    </body>
-</html>`,
+                `<!DOCTYPE html>
+                    <html lang="">
+                    <head>
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                        <meta charset="utf-8" />
+                        <title>Welcome to Razzle</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        ${cssLinksFromAssets(assets, 'client')}
+                    </head>
+                    <body>
+                        <div id="root">${markup}</div>
+                        ${jsScriptTagsFromAssets(assets, 'client', ' defer crossorigin')}
+                    </body>
+                </html>`,
             );
         }
     });

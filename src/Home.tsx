@@ -7,7 +7,7 @@ const Home: React.FC = () => (
     <div className="Home">
         <div className="Home-header">
             <img src={logo} className="Home-logo" alt="logo" />
-            <h2>Welcome to рарар</h2>
+            <h2>Welcome to !</h2>
             <h3>{process.env.NODE_ENV}</h3>
         </div>
         <p className="Home-intro">
